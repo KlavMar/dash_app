@@ -1,10 +1,10 @@
 from app_dash.dashboard.settings_plot import *
 
 
-
+style_graph={"background":"#ffffff"}
 data_frame = df[df.country=="France"]
 
-fig = px.bar(data_frame=data_frame,x="date",y="new_cases",color_discrete_sequence=["#06b6d4"])
+fig = px.bar(data_frame=data_frame,x="date",y="new_cases",color_discrete_sequence=["#f87171"])
 fig.update_layout(
 font=dict( family="Arial Black",size=18,color="#6b7280"),
 title="Nouveaux Cas",
@@ -21,7 +21,7 @@ app.layout=html.Div([
             
         ]),
         html.Div([
-            dcc.Graph(id="news_cases",figure=fig,style={"height":"500px","width":"750px","margin":"1em"})
+            dcc.Graph(id="news_cases",figure=fig,style=style_graph)
         ])
 ])
 

@@ -1,0 +1,7 @@
+{% extends 'dashboard.html' %}
+{%load plotly_dash%}
+
+{% block graph %} 
+{%plotly_app name="single_plot" ratio=1%}
+
+{% endblock %}

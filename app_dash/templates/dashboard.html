@@ -5,20 +5,44 @@
     {%load plotly_dash%}
 
 </head>
+<style>
+    .content-graph{
+    
+    }
+    .content-nav{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        padding:1em;
+    }
+    .content-nav ul {
+        display: flex;
+    }
+    ol,ul{
+        list-style: none;
+    }
+    li a{
+        padding:1em;
+    }
+    a{ 
+        text-decoration: none;
+        color:black;
+        font-size: 1.25em;
+        line-height: 1;
+        font-weight: bold;
+
+    }
+</style>
 <body>
     <main id="dashboard">
-
+        <aside class="aside">
+           {% include 'nav_content.html' %} 
+        </aside>
         <section class="content-dashboard">
-            <article class="content_graph">
-                {%plotly_app name="single_plot" ratio=1%}
-            </article>
-            <article class="content_graph">
-
-            </article>
             <article class="content-graph">
-             
-            </article>
-          
+                {% block graph %} {% endblock %}
+           
+         </article>
         </section>
     </main>
 </body>
