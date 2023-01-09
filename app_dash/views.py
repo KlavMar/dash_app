@@ -11,3 +11,7 @@ def view_first_plot(request):
 
 def first_dashboard(request):
     return render(request,"first_dashboard.html")
+
+
+def dashboard_callback(request):
+    return render(request,"dashboard_callback.html")
